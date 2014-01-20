@@ -9,35 +9,35 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Login"
-            android:id="@+id/login_title" android:layout_marginLeft="15dp" android:layout_marginTop="15dp"
+            android:text="@string/login_textview_titletext"
+            android:id="@+id/login_textview_title" android:layout_marginLeft="15dp" android:layout_marginTop="15dp"
             android:layout_marginRight="15dp" android:autoText="false"
             android:gravity="center"/>
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Username or password not valid"
-            android:id="@+id/textView2" android:layout_marginLeft="15dp" android:layout_marginRight="15dp"
+            android:text="@string/login_textfield_errortext"
+            android:id="@+id/login_textview_error" android:layout_marginLeft="15dp" android:layout_marginRight="15dp"
             android:layout_marginTop="15dp" android:layout_gravity="bottom" android:visibility="invisible"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText" android:layout_marginTop="15dp" android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp" android:hint="YourName"/>
+            android:id="@+id/login_editText_name" android:layout_marginTop="15dp" android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" android:hint="@string/login_textfield_hinttext"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText2" android:layout_marginTop="15dp" android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp" android:hint="Password"/>
+            android:id="@+id/login_editText_password" android:layout_marginTop="15dp" android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" android:hint="@string/login_password_hinttext"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:id="@+id/button" android:layout_gravity="center_horizontal" android:layout_marginTop="15dp"
+            android:text="@string/login_buttontxt"
+            android:id="@+id/login_button_login" android:layout_gravity="center_horizontal" android:layout_marginTop="15dp"
             android:layout_marginLeft="75dp" android:layout_marginRight="75dp"/>
 </LinearLayout>

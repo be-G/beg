@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">beg</string>
+    <string name="login_textfield_hinttext">YourName</string>
+    <string name="login_password_hinttext">Password</string>
+    <string name="login_buttontxt">Login</string>
+    <string name="login_textfield_errortext">Username or password not valid</string>
+    <string name="login_textview_titletext">Login</string>
 </resources>
