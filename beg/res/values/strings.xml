@@ -6,4 +6,8 @@
     <string name="login_buttontxt">Login</string>
     <string name="login_textfield_errortext">Username or password not valid</string>
     <string name="login_textview_titletext">Login</string>
+    <string name="login_createaccout">Create Account</string>
+    <string name="login_name_emptyerror">Name cannot be empty</string>
+    <string name="login_password_error">Password cannot be empty</string>
+    <string name="login_name_shorterror">Password is short must have 5 character minum</string>
 </resources>

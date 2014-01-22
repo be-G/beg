@@ -3,23 +3,15 @@ package beg.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
 
 public class MapActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //TODO stub remember to del
-        SharedPreferences.Editor editor = getSharedPreferences("Preferences", Context.MODE_PRIVATE).edit();
-        editor.putBoolean("LOGGED",true);
-        editor.commit();
-        //-------------------------------------------------------------------------------------------------
-
         if(isLogged()){
-            Intent intent = new Intent(this,LoginActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this,LoginActivity.class));
+            finish();
         }
 
         setContentView(R.layout.main);
