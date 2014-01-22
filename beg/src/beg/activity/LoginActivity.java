@@ -1,7 +1,6 @@
 package beg.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,12 +42,12 @@ public class LoginActivity extends Activity {
         //TODO to implement login to web service
         setUserAsLogged();
         startActivity(new Intent(this,MapActivity.class));
-
+        finish();
     }
 
     private void setUserAsLogged() {
-        SharedPreferences.Editor editor = getSharedPreferences("Preferences", Context.MODE_PRIVATE).edit();
-        editor.putBoolean("LOGGED",true);
+        SharedPreferences.Editor editor = getSharedPreferences("Preferences",MODE_PRIVATE).edit();
+        editor.putString("LOGGED", "YES");
         editor.commit();
     }
 
