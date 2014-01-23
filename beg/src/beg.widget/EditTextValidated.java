@@ -19,13 +19,13 @@ public abstract class EditTextValidated extends EditText {
             @Override
             public void onFocusChange(View view, boolean b) {
 
-                validate((EditTextValidated) view, b);
+                validate(b);
             }
         });
 
     }
 
 
-    public abstract boolean validate(EditTextValidated view, boolean b);
+    public abstract boolean validate(boolean b);
 
 }

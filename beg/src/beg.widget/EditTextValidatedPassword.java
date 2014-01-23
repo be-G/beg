@@ -12,13 +12,13 @@ public class EditTextValidatedPassword extends EditTextValidated {
     }
 
     @Override
-    public boolean validate(EditTextValidated editTextValidatePassword, boolean b) {
+    public boolean validate(boolean b) {
 
-        if(editTextValidatePassword.getText().toString().length() == 0 && !b){
-            editTextValidatePassword.setError(context.getString(R.string.login_name_emptyerror));
+        if(this.getText().toString().length() == 0 && !b){
+            this.setError(context.getString(R.string.login_name_emptyerror));
             return false;
-        } else if(editTextValidatePassword.getText().toString().length() < 5 && !b){
-            editTextValidatePassword.setError(context.getString(R.string.login_name_shorterror));
+        } else if(this.getText().toString().length() < 5 && !b){
+            this.setError(context.getString(R.string.login_name_shorterror));
             return false;
         }
 

@@ -19,11 +19,19 @@ public class LoginActivity extends Activity {
         findViewById(R.id.login_button_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(getPasswordEditText().validate(getPasswordEditText(),false) & getNameEditText().validate(getNameEditText(),false)){
+                if(getPasswordEditText().validate(false) & getNameEditText().validate(false)){
                     Log.d("DEBUG!!", "validation ok");
 
                     login();
                 }
+            }
+        });
+
+        findViewById(R.id.login_createaccount_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,CreateAccountActivity.class));
+                finish();
             }
         });
 
@@ -50,6 +58,4 @@ public class LoginActivity extends Activity {
         editor.putString("LOGGED", "YES");
         editor.commit();
     }
-
-
 }

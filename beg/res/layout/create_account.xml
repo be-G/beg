@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+            android:textSize="35dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/account_textview_titletext"
+            android:id="@+id/account_textview_title"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:autoText="false"
+            android:gravity="center"/>
+
+    <beg.widget.EditTextValidatedName
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/account_editText_name"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:hint="@string/name_textfield_hinttext"
+            android:editable="true"/>
+
+    <beg.widget.EditTextValidatedEmail
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/account_editText_email"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:hint="@string/email_textfield_hinttext"
+            android:editable="true"/>
+
+    <beg.widget.EditTextValidatedPassword
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/account_editText_password"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:hint="@string/password_textfield_hinttext"
+            android:password="true"/>
+
+    <beg.widget.EditTextValidatedPassword
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/account_editText_confirmpassword"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:hint="@string/confirmpassword_textfield_hinttext"
+            android:password="true"/>
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createaccount"
+            android:id="@+id/account_createaccount_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="75dp"/>
+
+
+
+</LinearLayout>

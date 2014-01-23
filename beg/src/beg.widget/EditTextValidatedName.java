@@ -12,10 +12,10 @@ public class EditTextValidatedName extends EditTextValidated {
     }
 
     @Override
-    public boolean validate(EditTextValidated editTextValidateName, boolean b) {
+    public boolean validate(boolean b) {
 
-        if(editTextValidateName.getText().toString().length() == 0 && !b){
-            editTextValidateName.setError(context.getString(R.string.login_name_emptyerror));
+        if(this.getText().toString().length() == 0 && !b){
+            this.setError(context.getString(R.string.login_name_emptyerror));
             return false;
         }
 
