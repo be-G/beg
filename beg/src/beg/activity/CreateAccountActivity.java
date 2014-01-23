@@ -70,10 +70,15 @@ public class CreateAccountActivity extends Activity {
         return (EditTextValidated)findViewById(R.id.account_editText_password);
     }
 
-    //TODO codice duplicato rifattorizzare
+    //TODO codice duplicato
     private void setUserAsLogged() {
-        SharedPreferences.Editor editor = getSharedPreferences("Preferences",MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getSharedPreferences("Preferences", MODE_PRIVATE).edit();
         editor.putString("LOGGED", "YES");
         editor.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this,MapActivity.class));
     }
 }

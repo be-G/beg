@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import beg.widget.EditTextValidated;
 import beg.widget.EditTextValidatedName;
 import beg.widget.EditTextValidatedPassword;
 
 public class LoginActivity extends Activity {
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -20,8 +20,6 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View view) {
                 if(getPasswordEditText().validate(false) & getNameEditText().validate(false)){
-                    Log.d("DEBUG!!", "validation ok");
-
                     login();
                 }
             }
@@ -34,7 +32,6 @@ public class LoginActivity extends Activity {
                 finish();
             }
         });
-
     }
 
     private EditTextValidated getPasswordEditText() {
@@ -46,15 +43,15 @@ public class LoginActivity extends Activity {
     }
 
     private void login() {
-
         //TODO to implement login to web service
         setUserAsLogged();
         startActivity(new Intent(this,MapActivity.class));
         finish();
     }
 
+    //TODO codice duplicato è un bel casino eliminare questo tipo di duplicazione
     private void setUserAsLogged() {
-        SharedPreferences.Editor editor = getSharedPreferences("Preferences",MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getSharedPreferences("Preferences", MODE_PRIVATE).edit();
         editor.putString("LOGGED", "YES");
         editor.commit();
     }

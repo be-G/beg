@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 public class MapActivity extends Activity {
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -18,7 +19,6 @@ public class MapActivity extends Activity {
 
     }
 
-    //TODO think to move to another class
     private boolean isLogged() {
 
         SharedPreferences pref = getSharedPreferences("Preferences",MODE_PRIVATE);
