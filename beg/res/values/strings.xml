@@ -16,4 +16,8 @@
     <string name="account_email_emptyerror">Insert a valid mail</string>
     <string name="account_email_formaterror">Email must be like this name@provider.com</string>
     <string name="account_confirmpassword_error">Password and confirm password must be th same</string>
+    <string name="welcome_textview_titletext">Welcome!</string>
+    <string name="welcome_textview_description">You can add a photo to your profile chosing it into your gallary!!\n
+    </string>
+    <string name="welcome_button_addphoto">Add a Photo</string>
 </resources>
