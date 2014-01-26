@@ -22,6 +22,7 @@ public class CreateAccountActivity extends Activity {
 
                 if (isPasswordConfirmed() & getEditTextValidatedName().validate(false) & getEditTextValidatedEmail().validate(false)) {
                     //TODO registro l'utente sul server
+                    Log.d("DEBUG","onClick");
                     setUserAsLogged();
                     goToWelcomeActivity();
                     finish();

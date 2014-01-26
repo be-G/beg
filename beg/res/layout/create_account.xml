@@ -23,7 +23,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/account_editText_name"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
             android:hint="@string/name_textfield_hinttext"

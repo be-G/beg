@@ -14,5 +14,6 @@
         <activity android:name="LoginActivity"/>
         <activity android:name=".CreateAccountActivity"/>
         <activity android:name=".WelcomeActivity"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </application>
 </manifest> 
