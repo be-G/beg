@@ -15,7 +15,7 @@ public class MapActivity extends Activity {
             finish();
         }
 
-        setContentView(R.layout.main);
+        setContentView(R.layout.map);
 
     }
 

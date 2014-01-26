@@ -20,4 +20,5 @@
     <string name="welcome_textview_description">You can add a photo to your profile chosing it into your gallary!!
     </string>
     <string name="welcome_button_addphoto">Add a Photo</string>
+    <string name="map_picker_title">Chose your color</string>
 </resources>
