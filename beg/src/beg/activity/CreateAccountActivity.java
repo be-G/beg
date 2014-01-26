@@ -81,5 +81,6 @@ public class CreateAccountActivity extends Activity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this,MapActivity.class));
+        finish();
     }
 }
