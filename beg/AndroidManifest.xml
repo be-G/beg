@@ -11,8 +11,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="LoginActivity"/>
-        <activity android:name=".CreateAccountActivity"/>
+        <activity android:name="LoginActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".CreateAccountActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity android:name=".WelcomeActivity"/>
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </application>
