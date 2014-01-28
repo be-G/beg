@@ -37,11 +37,4 @@ public class WelcomeActivity extends Activity {
         return (ImageView)findViewById(R.id.welcome_imageView_photo);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        //TODO resize save photo on DB if you got it
-        startActivity(new Intent(this,MapActivity.class));
-        finish();
-    }
 }

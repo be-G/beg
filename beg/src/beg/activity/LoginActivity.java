@@ -45,7 +45,6 @@ public class LoginActivity extends Activity {
     private void login() {
         //TODO to implement login to web service
         setUserAsLogged();
-        startActivity(new Intent(this,MapActivity.class));
         finish();
     }
 

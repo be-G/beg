@@ -76,10 +76,4 @@ public class CreateAccountActivity extends Activity {
         editor.putString("LOGGED", "YES");
         editor.commit();
     }
-
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(this,MapActivity.class));
-        finish();
-    }
 }
