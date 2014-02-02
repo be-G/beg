@@ -14,6 +14,7 @@
         <activity android:name="LoginActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity android:name=".CreateAccountActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity android:name=".WelcomeActivity"/>
+        <activity android:name=".PhotoActivity"/>
 
     </application>
 

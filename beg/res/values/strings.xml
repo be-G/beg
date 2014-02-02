@@ -21,4 +21,6 @@
     </string>
     <string name="welcome_button_addphoto">Add a Photo</string>
     <string name="map_picker_title">Chose your color</string>
+    <string name="welcome_button_gotomap">Go To Map</string>
+    <string name="photo_button_gotomap">Go To Map Page</string>
 </resources>
