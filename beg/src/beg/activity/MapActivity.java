@@ -26,8 +26,7 @@ public class MapActivity extends Activity {
         setContentView(R.layout.map);
 
         calculateLocation();
-
-        getListView().setAdapter(new ArrayAdapter<String>(this,R.layout.row,R.id.row_text,getListOfNearUsers(location)));
+        getListView().setAdapter(new ArrayAdapter<String>(this,R.layout.list_item,R.id.rowText,getListOfNearUsers(location)));
 
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -38,7 +37,6 @@ public class MapActivity extends Activity {
         });
 
     }
-
 
     private ListView getListView() {
         return (ListView)findViewById(R.id.map_listView);
