@@ -9,48 +9,80 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:id="@+id/photos_layout_over" android:baselineAligned="false">
+            android:layout_weight="1"
+            android:gravity="center">
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="7.5dp"
-                android:id="@+id/photos_layoutimage_1"/>
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginRight="7.5dp"
-                android:id="@+id/photos_layoutimage_2"/>
+                android:gravity="center"
+                >
+            <beg.widget.ImageViewPhoto
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/photo_image"
+                    android:clickable="true"
+                    android:id="@+id/photo_image_1"/>
 
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+            <beg.widget.ImageViewPhoto
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/photo_image"
+                    android:clickable="true"
+                    android:id="@+id/photo_image_2"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="15dp"
-            android:id="@+id/photos_layout_under" android:baselineAligned="false">
+            android:layout_weight="1"
+            android:id="@+id/photos_layout_under"
+            android:gravity="center">
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="7.5dp"
-                android:id="@+id/photos_layoutimage_3"/>
+                android:gravity="center"
+                >
+            <beg.widget.ImageViewPhoto
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/photo_image"
+                    android:clickable="true"
+                    android:id="@+id/photo_image_3"/>
+        </LinearLayout>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginRight="7.5dp"
-                android:id="@+id/photos_layoutimage_4"/>
+                android:gravity="center"
+                >
 
+            <beg.widget.ImageViewPhoto
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/photo_image"
+                    android:clickable="true"
+                    android:id="@+id/photo_image_4"
+                    />
+        </LinearLayout>
     </LinearLayout>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/photo_button_gotomap"
             android:id="@+id/photo_button_gotomap"
-            android:layout_gravity="center_horizontal"/>
-
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            />
 </LinearLayout>

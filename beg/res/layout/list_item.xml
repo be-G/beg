@@ -2,18 +2,20 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:layout_marginTop="7.5dp">
 
-    <Button
-            android:id="@+id/button"
+    <beg.widget.ListItemButton
+            android:id="@+id/list_item_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_launcher"
+
             />
 
     <TextView
-            android:id="@+id/rowText"
-            android:layout_width="match_parent"
+            android:id="@+id/listitem_rowText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            />
 
