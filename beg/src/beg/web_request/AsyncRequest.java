@@ -18,7 +18,7 @@ public class AsyncRequest {
         List<User> list = new LinkedList<User>();
 
         list.add(new User(Color.BLUE, "Mateo Binda",new UserLocation(1.0,1.0),new UserLocation(1.0,1.0),"desc",true));
-        list.add(new User(Color.BLUE, "Claudio Colombo",new UserLocation(1.0,1.0),new UserLocation(1.0,1.0),"desc",true));
+        list.add(new User(Color.RED, "Claudio Colombo",new UserLocation(1.0,1.0),new UserLocation(1.0,1.0),"desc",true));
         list.add(new User(Color.BLUE, "Walter Fabris",new UserLocation(1.0,1.0),new UserLocation(1.0,1.0),"desc",true));
         list.add(new User(Color.BLUE, "Federico Ferretti",new UserLocation(1.0,1.0),new UserLocation(1.0,1.0),"desc",true));
         list.add(new User(Color.BLUE, "Andrea Esempio",new UserLocation(1.0,1.0),new UserLocation(1.0,1.0),"desc",true));

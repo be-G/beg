@@ -1,6 +1,5 @@
 package beg.activity;
 
-import android.app.Activity;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -10,7 +9,9 @@ import android.widget.ListView;
 import beg.web_request.AsyncRequest;
 import beg.widget.ListUserAdapter;
 
-public class MapActivity extends Activity {
+
+
+public class MapActivity extends BegActivity {
 
     protected static Location location;
 
@@ -19,7 +20,7 @@ public class MapActivity extends Activity {
 
         setContentView(R.layout.map);
 
-        //TODO controllare se la connessione è attiva nel caso segnalare all'utente di attivare la connessione
+        //TODO controllare  se la connessione è attiva nel caso segnalare all'utente di attivare la connessione
         calculateLocation();
 
         getListView().setAdapter(new ListUserAdapter(this,R.layout.list_item, AsyncRequest.getListOfNearUsers(location)));

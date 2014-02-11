@@ -1,6 +1,5 @@
 package beg.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,7 +8,7 @@ import beg.widget.EditTextValidated;
 import beg.widget.EditTextValidatedName;
 import beg.widget.EditTextValidatedPassword;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BegActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +31,8 @@ public class LoginActivity extends Activity {
                 finish();
             }
         });
+
+        actionBar.hide();
     }
 
     private EditTextValidated getPasswordEditText() {

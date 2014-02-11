@@ -1,13 +1,12 @@
 package beg.activity;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import beg.widget.ImageViewPhoto;
 
-public class PhotoActivity extends Activity{
+public class PhotoActivity extends BegActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +17,6 @@ public class PhotoActivity extends Activity{
         findViewById(R.id.photo_button_gotomap).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PhotoActivity.this,MapActivity.class));
                 finish();
             }
         });
