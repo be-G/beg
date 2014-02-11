@@ -10,7 +10,7 @@ public class User {
     private boolean hasGPSLocation;
     private UserLocation lastGPSUserLocation;
 
-    public User(int color, String name, UserLocation lastGPSUserLocation, UserLocation userLocation, String description, boolean hasGPSLocation){
+    public User(int color, String name, UserLocation userLocation, String description, boolean hasGPSLocation){
         this.color = color;
         this.name = name;
         this.description = description;

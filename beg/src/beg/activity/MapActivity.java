@@ -23,10 +23,13 @@ public class MapActivity extends BegActivity {
         //TODO controllare  se la connessione è attiva nel caso segnalare all'utente di attivare la connessione
         calculateLocation();
 
-        getListView().setAdapter(new ListUserAdapter(this,R.layout.list_item, AsyncRequest.getListOfNearUsers(location)));
+        createUserList();
 
+    }
+
+    private void createUserList() {
+        getListView().setAdapter(new ListUserAdapter(this, R.layout.list_item, AsyncRequest.getListOfNearUsers(location)));
         removeListLineSeparator();
-
     }
 
     private void removeListLineSeparator() {
