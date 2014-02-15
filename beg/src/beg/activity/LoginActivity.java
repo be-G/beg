@@ -44,7 +44,9 @@ public class LoginActivity extends BegActivity {
     }
 
     private void login() {
-        //TODO to implement login to web service
+
+        
+
         setUserAsLogged();
         finish();
     }
