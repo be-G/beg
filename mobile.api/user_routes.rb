@@ -8,5 +8,7 @@ class UserRoutes < Sinatra::Base
     params["name"]
     params["password"]
 
+    'OK'
+
   end
 end

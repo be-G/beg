@@ -8,7 +8,8 @@ import beg.model.UserLocation;
 import java.util.LinkedList;
 import java.util.List;
 
-public class AsyncRequest {
+public class AsyncRequest{
+
 
     public static List<User> getListOfNearUsers(Location location) {
 
@@ -32,5 +33,6 @@ public class AsyncRequest {
 
         return list;
     }
+
 
 }
