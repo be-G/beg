@@ -29,6 +29,9 @@
         <activity android:name=".PhotoActivity"
                   android:configChanges="orientation"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".UserActivity"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
 
     </application>
 

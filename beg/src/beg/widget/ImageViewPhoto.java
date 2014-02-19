@@ -26,7 +26,6 @@ public class ImageViewPhoto extends ImageView{
 
     }
 
-
     public boolean isPhotoSelected(){
         return isPhotoSelected;
     }

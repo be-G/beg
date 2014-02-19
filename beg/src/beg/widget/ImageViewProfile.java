@@ -1,32 +1,23 @@
 package beg.widget;
 
-
 import android.content.Context;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-public abstract class ImageViewProfile extends ImageView {
+public class ImageViewProfile extends ImageView{
 
-    private static Context context;
+    public ImageViewProfile(Context context, AttributeSet attrs) {
+        super(context, attrs);
 
-    public ImageViewProfile(Context context) {
-        super(context);
-
-        this.context = context;
-
-        setOnClickListener(new OnClickListener() {
+        this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isEmpty()) {
-                    pickPhoto();
-                }
+
+                    //TODO ingrandisci immagine
             }
         });
+
     }
 
-    protected abstract void pickPhoto();
-
-    private boolean isEmpty() {
-        return this.getDrawable() == null;
-    }
 }

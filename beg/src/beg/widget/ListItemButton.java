@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import beg.activity.LoginActivity;
+import beg.activity.UserActivity;
 
 public class ListItemButton extends Button {
 
@@ -20,16 +21,22 @@ public class ListItemButton extends Button {
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkLogin();
+                if (!isLogged()) {
+                    goToLogin();
+                } else {
+                    goToUserDetail();
+                }
             }
         });
 
     }
 
-    private void checkLogin(){
-        if (!isLogged()) {
-            context.startActivity(new Intent(context, LoginActivity.class));
-        }
+    private void goToUserDetail() {
+        this.context.startActivity(new Intent(this.context, UserActivity.class));
+    }
+
+    private void goToLogin() {
+        this.context.startActivity(new Intent(this.context, LoginActivity.class));
     }
 
     private boolean isLogged() {
