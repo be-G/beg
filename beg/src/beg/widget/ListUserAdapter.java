@@ -27,18 +27,22 @@ public class ListUserAdapter extends ArrayAdapter<User> {
 
         View userView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, null);
 
-        userView.findViewById(R.id.list_item_button).setBackgroundResource(getUser(position).getColor());
+        getListItemButton(userView).configureButton(getUser(position));
 
         ((TextView) userView.findViewById(R.id.listitem_name_text)).setText(getUser(position).getName());
 
         ((TextView) userView.findViewById(R.id.listitem_decription_text)).setText(getUser(position).getDescription());
 
-        ((TextView) userView.findViewById(R.id.listitem_distance_text)).setText(getUser(position).getUserLocation().getDistanceInMeter());
+        ((TextView) userView.findViewById(R.id.listitem_distance_text)).setText(getUser(position).getDistance()+"");
 
         //TODO manca gestione cambio immagine sul touch sfera
 
         return userView;
 
+    }
+
+    private ListItemButton getListItemButton(View userView) {
+        return (ListItemButton) userView.findViewById(R.id.list_item_button);
     }
 
     private User getUser(int position) {

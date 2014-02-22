@@ -3,7 +3,6 @@ package beg.web_request;
 import android.location.Location;
 import beg.model.Color;
 import beg.model.User;
-import beg.model.UserLocation;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,18 +17,18 @@ public class AsyncRequest{
 
         List<User> list = new LinkedList<User>();
 
-        list.add(new User(Color.BLUE, "Mateo Binda", new UserLocation(1.0,1.0, "20m"),"solo negri",true));
-        list.add(new User(Color.RED, "Claudio Colombo", new UserLocation(1.0,1.0, "20m"),"solo magrebini",true));
-        list.add(new User(Color.BLUE, "Walter Fabris", new UserLocation(1.0,1.0, "20m"),"desc",true));
-        list.add(new User(Color.YELLOW, "Federico Ferretti", new UserLocation(1.0,1.0, "20m"),"solo donzo",true));
-        list.add(new User(Color.ORANGE, "Andrea Esempio", new UserLocation(1.0,1.0, "20m"),"solo ariani",true));
-        list.add(new User(Color.BLUE, "Andrea Nicoli", new UserLocation(1.0,1.0, "20m"),"froci filu",true));
-        list.add(new User(Color.BLUE, "Alberto Pelizzari", new UserLocation(1.0,1.0, "20m"),"l'Alberto!",true));
-        list.add(new User(Color.BLUE, "Fioravazzi Matteo", new UserLocation(1.0,1.0, "20m"),"agobubu",true));
-        list.add(new User(Color.BLUE, "Fabio Binda", new UserLocation(1.0,1.0, "20m"),"popper",true));
-        list.add(new User(Color.BLUE, "Niccolò Galli", new UserLocation(1.0,1.0, "20m"),"frocifilu Pem!!! Pem!! froci froci froci froci froci froci froci froci froci bellissimo blueh!!",true));
-        list.add(new User(Color.BLUE, "PemPem Froci", new UserLocation(1.0,1.0, "20m"),"desc",true));
-        list.add(new User(Color.BLUE, "Froci Filù", new UserLocation(1.0,1.0, "20m"),"desc",true));
+        list.add(new User(Color.BLUE, "Mateo Binda", 20,"solo negri"));
+        list.add(new User(Color.RED, "Claudio Colombo",20,"amo i magrebini, mi trovate tutte le sere in centrale"));
+        list.add(new User(Color.BLUE, "Walter Fabris",20,"desc"));
+        list.add(new User(Color.YELLOW, "Federico Ferretti",20,"solo donzo"));
+        list.add(new User(Color.ORANGE, "Andrea Esempio", 20,"solo ariani"));
+        list.add(new User(Color.BLUE, "Andrea Nicoli",20,"froci filu"));
+        list.add(new User(Color.BLUE, "Alberto Pelizzari",20,"l'Alberto!"));
+        list.add(new User(Color.BLUE, "Fioravazzi Matteo",20,"agobubu"));
+        list.add(new User(Color.BLUE, "Fabio Binda", 20,"popper"));
+        list.add(new User(Color.BLUE, "Niccolò Galli", 20,"frocifilu Pem!!! Pem!! froci froci froci froci froci froci froci froci froci bellissimo blueh!!"));
+        list.add(new User(Color.BLUE, "PemPem Froci", 20,"desc"));
+        list.add(new User(Color.BLUE, "Froci Filù", 20,"desc"));
 
         return list;
     }

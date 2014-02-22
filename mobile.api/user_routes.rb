@@ -1,5 +1,18 @@
 # user_routes.rb
 require 'sinatra'
+require 'pg'
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+    adapter: 'postgresql',
+    host: 'localhost',
+    database: 'beg',
+    password: 'postgres',
+    schema_search_path: 'beg'
+)
+
+class User < ActiveRecord::Base
+end
 
 class UserRoutes < Sinatra::Base
 
@@ -8,17 +21,17 @@ class UserRoutes < Sinatra::Base
     params["name"]
     params["password"]
 
+
+
     'OK'
 
   end
 
   get '/createaccount' do
 
-    params["name"]
-    params["password"]
-    params["email"]
+    @user = User.new(params);
 
-    'OK'
+    @user.save
 
   end
 

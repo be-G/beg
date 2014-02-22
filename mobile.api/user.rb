@@ -9,10 +9,6 @@ ActiveRecord::Base.establish_connection(
     schema_search_path: 'beg'
 )
 
-class User < ActiveRecord::User
-
-  has_one :positions
-  has_many :photos
-
+class User < ActiveRecord::Base
 end
 

@@ -3,15 +3,18 @@ package beg.widget;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import beg.activity.LoginActivity;
 import beg.activity.UserActivity;
+import beg.model.User;
 
 public class ListItemButton extends Button {
 
     private Context context;
+    private User userData;
 
     public ListItemButton(Context context, AttributeSet attrs) {
         super(context,attrs);
@@ -32,7 +35,16 @@ public class ListItemButton extends Button {
     }
 
     private void goToUserDetail() {
-        this.context.startActivity(new Intent(this.context, UserActivity.class));
+
+
+        Intent intent = new Intent(this.context, UserActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("User", userData);
+
+        intent.putExtras(bundle);
+        this.context.startActivity(intent);
+
     }
 
     private void goToLogin() {
@@ -46,4 +58,8 @@ public class ListItemButton extends Button {
         return "YES".equals(foo);
     }
 
+    public void configureButton(User user) {
+        userData = user;
+        this.setBackgroundResource(user.getColor());
+    }
 }

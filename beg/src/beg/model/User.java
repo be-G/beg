@@ -1,53 +1,27 @@
 package beg.model;
 
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private int color;
     private String name;
     private String description;
-    private UserLocation userLocation;
-    private boolean hasGPSLocation;
-    private UserLocation lastGPSUserLocation;
+    private float distance;
 
-    public User(int color, String name, UserLocation userLocation, String description, boolean hasGPSLocation){
+    public User(int color, String name, float distance, String description){
         this.color = color;
         this.name = name;
         this.description = description;
-        this.userLocation = userLocation;
-        this.hasGPSLocation = hasGPSLocation;
-        this.lastGPSUserLocation = lastGPSUserLocation;
+        this.distance = distance;
     }
 
-    public UserLocation getLastGPSUserLocation() {return this.lastGPSUserLocation;}
+    public String getName() {return name;}
 
-    public void setLastGPSUserLocation(UserLocation lastGPSUserLocation) {this.lastGPSUserLocation = lastGPSUserLocation;}
-
-    public boolean isHasGPSLocation() {return hasGPSLocation;}
-
-    public void setHasGPSLocation(boolean hasGPSLocation) {this.hasGPSLocation = hasGPSLocation;}
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public UserLocation getUserLocation() {return userLocation;}
-
-    public void setUserLocation(UserLocation userLocation) {this.userLocation = userLocation;}
+    public String getDescription() {return description;}
 
     public int getColor() {return color;}
 
-    public void setColor(int color) {this.color = color;}
+    public float getDistance() {return distance;}
 }
