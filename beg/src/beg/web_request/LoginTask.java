@@ -6,11 +6,17 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public abstract class LoginTask extends AsyncTask{
 
     private String name;
     private String pass;
+    private final String baseUrl = "http://10.0.0.2:9292/";
 
     public LoginTask (String name, String pass )
     {
@@ -21,34 +27,29 @@ public abstract class LoginTask extends AsyncTask{
 
     @Override
     protected Object doInBackground(Object[] params) {
-        String resp;
+
+        JSONObject resp = null;
 
         HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet("http://10.0.0.4:9292//login"+"?name="+name+"&?password="+pass);
 
         try {
 
-            HttpResponse response = httpclient.execute(httpGet);
+            HttpResponse response = httpclient.execute(new HttpGet(baseUrl+"/login"+"?name="+name+"&password="+pass));
 
-            resp = response.getStatusLine().getReasonPhrase();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
+            String result = reader.readLine();
 
-            if(resp == "OK"){
-                onLoginSuccess();
-            } else {
-                onLoginError();
+            if(null != resp && !"null".equals(resp)){
+                resp = new JSONObject(new JSONTokener(result));
             }
 
-
         } catch (Exception e) {
-            resp = "KO";
             onLoginFailure();
         }
 
         return resp;
     }
 
-    protected abstract void onLoginError();
-    public abstract void onLoginSuccess();
     public abstract void onLoginFailure();
 
 }

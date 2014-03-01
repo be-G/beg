@@ -13,6 +13,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_marble_imageView"
+                android:background="@drawable/sphere_blue"
+
                 android:layout_marginLeft="5dp"
 
                 />
@@ -24,6 +26,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:id="@+id/user_name_text"
+                    android:text="Matteo binda"
                     android:gravity="center_vertical"
                     android:layout_marginTop="7dp"
                     android:layout_marginLeft="7dp"/>
@@ -33,6 +36,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:id="@+id/user_distance_text"
+                    android:text="20m"
                     android:gravity="center_vertical"
                     android:layout_marginTop="7dp"
                     android:layout_marginLeft="7dp"/>

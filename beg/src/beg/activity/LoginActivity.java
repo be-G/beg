@@ -3,12 +3,13 @@ package beg.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import beg.web_request.LoginTask;
 import beg.widget.EditTextValidated;
 import beg.widget.EditTextValidatedName;
 import beg.widget.EditTextValidatedPassword;
+import org.json.JSONObject;
 
 public class LoginActivity extends BegActivity {
 
@@ -48,32 +49,57 @@ public class LoginActivity extends BegActivity {
 
     private void login() {
 
-        Log.d("DEBUG!!!","login");
+        //TODO check connection before
 
         new LoginTask(getNameEditText().getText() + "", getPasswordEditText().getText() + "") {
-            @Override
-            protected void onLoginError() {
-                //TODO utente non trovato
-            }
-
-            @Override
-            public void onLoginSuccess() {
-                setUserAsLogged();
-                finish();
-            }
 
             @Override
             public void onLoginFailure() {
-                //TODO connessione non presente
+                manageTextViewError("onLoginFailure");
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+
+                if(o == null){
+                   manageTextViewError("onLoginError");
+                } else {
+                   setUserAsLogged((JSONObject) o);
+                   startActivity(new Intent(LoginActivity.this,CreateAccountActivity.class));
+                   finish();
+                }
             }
         }.execute();
-
     }
 
-    //TODO codice duplicato è un bel casino eliminare questo tipo di duplicazione
-    private void setUserAsLogged() {
+    private void manageTextViewError(final String msg) {
+                setErrorTextViewVisibility(true);
+                setErrorTextViewText(msg);
+    }
+
+    private void setErrorTextViewText(String msg) {
+        getErrorTextView().setText(msg);
+    }
+
+    private void setErrorTextViewVisibility(boolean isVisible) {
+
+        getErrorTextView().setVisibility(isVisible?View.VISIBLE:View.GONE);
+    }
+
+    private TextView getErrorTextView() {
+        return (TextView)findViewById(R.id.login_textview_error);
+    }
+
+    private void setUserAsLogged(JSONObject resp) {
         SharedPreferences.Editor editor = getSharedPreferences("Preferences", MODE_PRIVATE).edit();
         editor.putString("LOGGED", "YES");
+        editor.putString("MAIL","");
+        editor.putString("DESCRIPTION","");
+        editor.putString("STATE","");
+        editor.putString("NAME","");
+
         editor.commit();
     }
+
 }
