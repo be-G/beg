@@ -17,7 +17,7 @@ public class UserActivity extends BegActivity{
 
         ((TextView) findViewById(R.id.user_name_text)).setText(user.getName());
         ((TextView) findViewById(R.id.user_description_text)).setText(user.getDescription());
-        findViewById(R.id.user_marble_imageView).setBackgroundResource(user.getColor());
+        findViewById(R.id.user_marble_imageView).setBackgroundResource(user.getState());
         ((TextView) findViewById(R.id.user_distance_text)).setText(user.getDistance()+" m");
 
     }

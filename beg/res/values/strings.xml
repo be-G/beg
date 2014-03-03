@@ -20,7 +20,12 @@
     <string name="welcome_textview_description">You can add a photo to your profile chosing it into your gallary!!
     </string>
     <string name="welcome_button_addphoto">Add a Photo</string>
-    <string name="map_picker_title">Chose your color</string>
+    <string name="map_picker_title">Chose your state</string>
     <string name="welcome_button_gotomap">Go To Map</string>
     <string name="photo_button_gotomap">Go To Map Page</string>
+    <string name="login_failure">There was an error with the login retry!</string>
+    <string name="login_error">Username or password are not correct</string>
+    <string name="createaccount_failure">createAccountFailure</string>
+    <string name="createaccount_error">CreateAccountError</string>
+    <string name="createaccount_textfield_errortext">CreateAccountError</string>
 </resources>

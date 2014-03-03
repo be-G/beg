@@ -20,12 +20,7 @@ class UserRoutes < Sinatra::Base
 
   get '/login' do
 
-    p params["name"]
-    p params["password"]
-
     res = User.find_by name: params["name"], password: params["password"]
-    p res
-    p res.to_json
 
     res.to_json
 
@@ -39,7 +34,13 @@ class UserRoutes < Sinatra::Base
     p params["state"]
     p params["mail"]
 
-    User.create :name => params["name"], :password => params["password"], :state => params["state"], :mail => params["mail"], :description => params["description"]
+    #TODO controllo dell'errore e restituiri il json con i dati dell'utente
+
+    res = User.create :name => params["name"], :password => params["password"], :state => params["state"], :mail => params["mail"], :description => params["description"]
+
+    p res
+
+    res
 
   end
 

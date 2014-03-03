@@ -60,6 +60,6 @@ public class ListItemButton extends Button {
 
     public void configureButton(User user) {
         userData = user;
-        this.setBackgroundResource(user.getColor());
+        this.setBackgroundResource(user.getState());
     }
 }

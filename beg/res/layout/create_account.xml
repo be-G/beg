@@ -18,6 +18,13 @@
                 android:layout_marginRight="15dp"
                 android:autoText="false"
                 android:gravity="center"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/createaccount_textfield_errortext"
+                android:id="@+id/createaccount_textview_error" android:layout_marginLeft="15dp" android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp" android:layout_gravity="bottom" android:visibility="invisible"/>
 
         <beg.widget.EditTextValidatedName
                 android:layout_width="fill_parent"
