@@ -5,9 +5,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import beg.web_request.CreateAccountTask;
 import beg.widget.EditTextValidated;
+import beg.widget.TextViewError;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CreateAccountActivity extends BegActivity {
@@ -41,7 +42,7 @@ public class CreateAccountActivity extends BegActivity {
                             super.onPostExecute(o);
 
                             if(o == null){
-                                manageTextViewError(getString(R.string.createaccount_error));
+                                getErrorTextView().manageTextViewError(getString(R.string.createaccount_error));
                             } else {
                                 setUserAsLogged((JSONObject) o);
                                 goToWelcomeActivity();
@@ -56,23 +57,8 @@ public class CreateAccountActivity extends BegActivity {
 
     }
 
-    //TODO Generalizzare in un widget di errore cosi da togliere la duplicazione nella login
-    private void manageTextViewError(final String msg) {
-        setErrorTextViewVisibility(true);
-        setErrorTextViewText(msg);
-    }
-
-    private void setErrorTextViewText(String msg) {
-        getErrorTextView().setText(msg);
-    }
-
-    private void setErrorTextViewVisibility(boolean isVisible) {
-
-        getErrorTextView().setVisibility(isVisible?View.VISIBLE:View.GONE);
-    }
-
-    private TextView getErrorTextView() {
-        return (TextView)findViewById(R.id.createaccount_textview_error);
+    private TextViewError getErrorTextView() {
+        return (TextViewError)findViewById(R.id.createaccount_textview_error);
     }
 
     private void goToWelcomeActivity() {
@@ -134,13 +120,24 @@ public class CreateAccountActivity extends BegActivity {
 
     //TODO codice duplicato
     private void setUserAsLogged(JSONObject o) {
+
         SharedPreferences.Editor editor = getSharedPreferences("Preferences", MODE_PRIVATE).edit();
+
         editor.putString("LOGGED", "YES");
-        editor.putString("MAIL","");
-        editor.putString("DESCRIPTION","");
-        editor.putString("STATE","");
-        editor.putString("NAME","");
+
+        try {
+
+            editor.putString("MAIL",o.getString("mail")+"");
+            editor.putString("DESCRIPTION","new to beg");
+            editor.putString("STATE","1");
+            editor.putString("NAME",o.getString("name")+"");
+
+        } catch (JSONException e) {
+            Log.e("Error","JSONExc in setUserAsLogged");
+        }
+
         editor.commit();
+
     }
 
 }
