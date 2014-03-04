@@ -7,7 +7,7 @@ public abstract class CreateAccountTask extends AsyncBegTask{
     private String name;
     private String mail;
     private String password;
-    private String standardDescription = "new to beg!!";
+    private String standardDescription = "new%20to%20beg";
 
     public CreateAccountTask(String name, String mail, String password) {
         this.name = name;

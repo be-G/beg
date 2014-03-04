@@ -29,18 +29,9 @@ class UserRoutes < Sinatra::Base
 
   get '/createaccount' do
 
-    p params["name"]
-    p params["password"]
-    p params["state"]
-    p params["mail"]
+     User.create :name => params["name"], :password => params["password"], :state => params["state"], :mail => params["mail"], :description => params["description"]
 
-    #TODO controllo dell'errore e restituiri il json con i dati dell'utente
-
-    res = User.create :name => params["name"], :password => params["password"], :state => params["state"], :mail => params["mail"], :description => params["description"]
-
-    p res
-
-    res
+     "{\"name\":\"#{params["name"]}\",\"mail\":\"#{params["mail"]}\"}"
 
   end
 

@@ -18,7 +18,11 @@ public abstract class AsyncBegTask extends AsyncTask {
 
     protected JSONObject resp = null;
 
-    protected final String baseUrl = "http://10.0.0.3:9292/";
+    protected final String baseUrl;
+
+    protected AsyncBegTask() {
+        baseUrl = "http://10.0.0.3:9292/";
+    }
 
     public abstract void onLoginFailure();
 
