@@ -4,18 +4,17 @@ import android.location.Location;
 import beg.model.Color;
 import beg.model.User;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.ArrayList;
 
 public class AsyncRequest{
 
 
-    public static List<User> getListOfNearUsers(Location location) {
+    public static ArrayList<User> getListOfNearUsers(Location location) {
 
         //TODO to impl now is stubbed
         //TODO chiamo il server per avere la lista di risultati delle persone vicine, lo chiamo solo se ho le informazioni sulla posizione in csocontrario richiedo la connessione alla rete o GPS
 
-        List<User> list = new LinkedList<User>();
+        ArrayList<User> list = new ArrayList<User>();
 
         list.add(new User(Color.BLUE, "Mateo Binda", 20,"solo negri"));
         list.add(new User(Color.RED, "Claudio Colombo",20,"amo i magrebini, mi trovate tutte le sere in centrale"));

@@ -58,7 +58,7 @@ public class MapActivity extends BegActivity {
 
         //TODO controllare se il network provider esiste nel caso non esista gestire l'ecccezione
         ((LocationManager)this.getSystemService(this.LOCATION_SERVICE)).requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
+        ((LocationManager)this.getSystemService(this.LOCATION_SERVICE)).requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     }
 
 }

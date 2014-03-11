@@ -36,7 +36,6 @@
                 android:id="@+id/listitem_decription_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="froci corbotto foiefewuio fewifnewuifn wqdqwd wd qw dw wd q d wqd wq d wq d wqd qw d wq d wqd ewfiunewuifew fewuinfeuwif ewifunew  fiewi fewijf ewpuifbuivw "
                 android:textSize="13dp" android:singleLine="true"/>
 
     </LinearLayout>

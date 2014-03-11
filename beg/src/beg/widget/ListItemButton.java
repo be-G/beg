@@ -8,13 +8,15 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import beg.activity.LoginActivity;
-import beg.activity.UserActivity;
+import beg.activity.UserDetailActivity;
 import beg.model.User;
+
+import java.util.ArrayList;
 
 public class ListItemButton extends Button {
 
     private Context context;
-    private User userData;
+    private ArrayList<User> userData;
 
     public ListItemButton(Context context, AttributeSet attrs) {
         super(context,attrs);
@@ -31,16 +33,14 @@ public class ListItemButton extends Button {
                 }
             }
         });
-
     }
 
     private void goToUserDetail() {
 
-
-        Intent intent = new Intent(this.context, UserActivity.class);
+        Intent intent = new Intent(this.context, UserDetailActivity.class);
 
         Bundle bundle = new Bundle();
-        bundle.putSerializable("User", userData);
+        bundle.putSerializable("Users", userData);
 
         intent.putExtras(bundle);
         this.context.startActivity(intent);
@@ -58,8 +58,8 @@ public class ListItemButton extends Button {
         return "YES".equals(foo);
     }
 
-    public void configureButton(User user) {
-        userData = user;
-        this.setBackgroundResource(user.getState());
+    public void configureButton(ArrayList<User> users, int pos) {
+        userData = users;
+        this.setBackgroundResource(users.get(pos).getState());
     }
 }

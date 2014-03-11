@@ -9,13 +9,13 @@ import android.widget.TextView;
 import beg.activity.R;
 import beg.model.User;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ListUserAdapter extends ArrayAdapter<User> {
 
-    private List<User> listUser;
+    private ArrayList<User> listUser;
 
-    public ListUserAdapter(Context context, int resource, List<User> items) {
+    public ListUserAdapter(Context context, int resource, ArrayList<User> items) {
         super(context, resource, items);
 
         this.listUser = items;
@@ -27,7 +27,7 @@ public class ListUserAdapter extends ArrayAdapter<User> {
 
         View userView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, null);
 
-        getListItemButton(userView).configureButton(getUser(position));
+        getListItemButton(userView).configureButton(this.listUser, position);
 
         ((TextView) userView.findViewById(R.id.listitem_name_text)).setText(getUser(position).getName());
 
