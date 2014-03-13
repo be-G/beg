@@ -4,7 +4,11 @@ package beg.activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import beg.model.User;
 
 import java.util.List;
@@ -44,6 +48,27 @@ public class UserDetailActivity extends BegActivity {
                 invalidateOptionsMenu();
             }
         });
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actions, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private List<User> getUsers() {
@@ -57,6 +82,5 @@ public class UserDetailActivity extends BegActivity {
     private Bundle getExtras() {
         return getIntent().getExtras();
     }
-
 
 }

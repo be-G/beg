@@ -160,6 +160,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Ruby.user_routes">
     <configuration default="false" name="user_routes" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">

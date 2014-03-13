@@ -15,8 +15,7 @@ public class BegActivity extends Activity {
 
         actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
-
-        //TODO in questa classe verrà gestito il drawer e l'action bar
+        actionBar.setBackgroundDrawable(null);
 
     }
 }
