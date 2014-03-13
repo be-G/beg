@@ -17,6 +17,7 @@ public class ListItemButton extends Button {
 
     private Context context;
     private ArrayList<User> userData;
+    private int position;
 
     public ListItemButton(Context context, AttributeSet attrs) {
         super(context,attrs);
@@ -41,6 +42,7 @@ public class ListItemButton extends Button {
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("Users", userData);
+        bundle.putInt("ItemPos",position);
 
         intent.putExtras(bundle);
         this.context.startActivity(intent);
@@ -59,7 +61,8 @@ public class ListItemButton extends Button {
     }
 
     public void configureButton(ArrayList<User> users, int pos) {
-        userData = users;
+        this.userData = users;
+        this.position = pos;
         this.setBackgroundResource(users.get(pos).getState());
     }
 }

@@ -1,7 +1,6 @@
 package beg.activity;
 
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
@@ -10,13 +9,10 @@ import beg.model.User;
 
 import java.util.List;
 
-public class UserDetailActivity extends Activity {
+public class UserDetailActivity extends BegActivity {
 
     private List<User> users;
-
     private ViewPager mPager;
-
-    private FragmentStatePagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +20,13 @@ public class UserDetailActivity extends Activity {
 
         setContentView(R.layout.activity_screen_slide);
 
-        users = (List<User>) getIntent().getExtras().getSerializable("Users");
-
-        // Instantiate a ViewPager and a PagerAdapter.
+        users = getUsers();
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPagerAdapter = new FragmentStatePagerAdapter(getFragmentManager()) {
+
+        FragmentStatePagerAdapter mPagerAdapter = new FragmentStatePagerAdapter(getFragmentManager()) {
             @Override
             public Fragment getItem(int pos) {
-                return UserDetailFragment.create(pos, users);
+                return UserDetailFragment.create(pos,users);
             }
 
             @Override
@@ -39,7 +34,10 @@ public class UserDetailActivity extends Activity {
                 return users.size();
             }
         };
+
         mPager.setAdapter(mPagerAdapter);
+        mPager.setCurrentItem(getItemPosition());
+
         mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -47,4 +45,18 @@ public class UserDetailActivity extends Activity {
             }
         });
     }
+
+    private List<User> getUsers() {
+        return (List<User>) getExtras().getSerializable("Users");
+    }
+
+    private int getItemPosition() {
+        return getExtras().getInt("ItemPos");
+    }
+
+    private Bundle getExtras() {
+        return getIntent().getExtras();
+    }
+
+
 }

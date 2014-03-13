@@ -12,26 +12,25 @@ import java.util.List;
 
 public class UserDetailFragment extends Fragment {
 
-    public static final String ARG_PAGE = "page";
+    public static final String USER = "user";
 
-    private static int position;
-    private static List<User> users;
+    private static User user;
 
     public static Fragment create(int position, List<User> users) {
 
-        UserDetailFragment.position = position;
-        UserDetailFragment.users = users;
-
         Bundle args = new Bundle();
-        args.putInt(ARG_PAGE, users.size());
+        args.putSerializable(USER, users.get(position));
+
         Fragment fragment = new UserDetailFragment();
         fragment.setArguments(args);
+
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        user = (User) getArguments().getSerializable(USER);
     }
 
     @Override
@@ -39,10 +38,10 @@ public class UserDetailFragment extends Fragment {
 
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.user, container, false);
 
-        ((TextView) rootView.findViewById(R.id.user_name_text)).setText(users.get(position).getName());
-        ((TextView) rootView.findViewById(R.id.user_description_text)).setText(users.get(position).getDescription());
-        rootView.findViewById(R.id.user_marble_imageView).setBackgroundResource(users.get(position).getState());
-        ((TextView) rootView.findViewById(R.id.user_distance_text)).setText(users.get(position).getDistance()+" m");
+        ((TextView) rootView.findViewById(R.id.user_name_text)).setText(user.getName());
+        ((TextView) rootView.findViewById(R.id.user_description_text)).setText(user.getDescription());
+        rootView.findViewById(R.id.user_marble_imageView).setBackgroundResource(user.getState());
+        ((TextView) rootView.findViewById(R.id.user_distance_text)).setText(user.getDistance() + " m");
 
         return rootView;
     }
