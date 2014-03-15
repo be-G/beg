@@ -25,7 +25,7 @@ public class ListUserAdapter extends ArrayAdapter<User> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View userView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, null);
+        View userView = LayoutInflater.from(getContext()).inflate(R.layout.map_list_item, null);
 
         getListItemButton(userView).configureButton(this.listUser, position);
 

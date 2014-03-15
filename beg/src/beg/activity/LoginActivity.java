@@ -61,7 +61,6 @@ public class LoginActivity extends BegActivity {
                    getErrorTextView().manageTextViewError(getString(R.string.login_error));
                 } else {
                    setUserAsLogged((JSONObject) o);
-                   startActivity(new Intent(LoginActivity.this,CreateAccountActivity.class));
                    finish();
                 }
             }

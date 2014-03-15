@@ -56,8 +56,7 @@ public class ListItemButton extends Button {
     private boolean isLogged() {
 
         SharedPreferences pref = context.getSharedPreferences("Preferences", context.MODE_PRIVATE);
-        String foo = pref.getString("LOGGED", "NO");
-        return "YES".equals(foo);
+        return "YES".equals(pref.getString("LOGGED", "NO"));
     }
 
     public void configureButton(ArrayList<User> users, int pos) {

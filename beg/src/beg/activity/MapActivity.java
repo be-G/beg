@@ -28,7 +28,7 @@ public class MapActivity extends BegActivity {
     }
 
     private void createUserList() {
-        getListView().setAdapter(new ListUserAdapter(this, R.layout.list_item, AsyncRequest.getListOfNearUsers(location)));
+        getListView().setAdapter(new ListUserAdapter(this, R.layout.map_list_item, AsyncRequest.getListOfNearUsers(location)));
         removeListLineSeparator();
     }
 

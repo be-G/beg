@@ -2,9 +2,9 @@ package beg.activity;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -49,8 +49,6 @@ public class UserDetailActivity extends BegActivity {
             }
         });
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override
@@ -63,12 +61,17 @@ public class UserDetailActivity extends BegActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
+
+            case R.id.action_chat:
+                goToChat();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void goToChat() {
+        startActivity(new Intent(this,ChatActivity.class));
     }
 
     private List<User> getUsers() {
