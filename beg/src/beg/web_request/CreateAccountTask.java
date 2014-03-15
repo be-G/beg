@@ -20,7 +20,6 @@ public abstract class CreateAccountTask extends AsyncBegTask{
 
         try {
 
-
             HttpResponse response = executeHttpGet(baseUrl + "/createaccount"+"?name="+name + "&password=" +password + "&mail=" + mail + "&description="+standardDescription+"&state=1");
             String stringResponse = parseResponseToString(response);
 

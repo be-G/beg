@@ -17,7 +17,6 @@ import java.io.InputStreamReader;
 public abstract class AsyncBegTask extends AsyncTask {
 
     protected JSONObject resp = null;
-
     protected final String baseUrl;
 
     protected AsyncBegTask() {
@@ -43,7 +42,7 @@ public abstract class AsyncBegTask extends AsyncTask {
     }
 
     protected static HttpResponse executeHttpGet(String uri) throws IOException {
-        return LoginTask.getHttpClient().execute(getHttpGet(uri));
+        return getHttpClient().execute(getHttpGet(uri));
     }
 
     protected static JSONObject getJsonObjectFromString(String stringResponse) throws JSONException {

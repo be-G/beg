@@ -9,7 +9,6 @@ public abstract class LoginTask extends AsyncBegTask{
 
     public LoginTask (String name, String pass)
     {
-        super();
         this.name = name;
         this.pass = pass;
     }
@@ -37,5 +36,7 @@ public abstract class LoginTask extends AsyncBegTask{
     private boolean isLoginSuccessfull(String stringResponse) {
         return null != stringResponse && !"null".equals(stringResponse);
     }
+
+
 
 }

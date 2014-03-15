@@ -27,7 +27,7 @@ public class ListItemButton extends Button {
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!isLogged()) {
+                if (false) {
                     goToLogin();
                 } else {
                     goToUserDetail();
@@ -56,7 +56,8 @@ public class ListItemButton extends Button {
     private boolean isLogged() {
 
         SharedPreferences pref = context.getSharedPreferences("Preferences", context.MODE_PRIVATE);
-        return "YES".equals(pref.getString("LOGGED", "NO"));
+        String foo = pref.getString("LOGGED", "NO");
+        return "YES".equals(foo);
     }
 
     public void configureButton(ArrayList<User> users, int pos) {

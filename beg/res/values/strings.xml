@@ -29,4 +29,5 @@
     <string name="createaccount_error">CreateAccountError</string>
     <string name="createaccount_textfield_errortext">CreateAccountError</string>
     <string name="chat_send_button">Send</string>
+    <string name="progress_dialog_text">Loading...</string>
 </resources>
