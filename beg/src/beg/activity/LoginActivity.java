@@ -45,23 +45,28 @@ public class LoginActivity extends BegActivity {
 
         //TODO check connection before, passare hashMap al costruttore LoginTask
 
+        showProgressDialog();
+
         new LoginTask(getNameEditText().getText() + "", getPasswordEditText().getText() + "") {
 
             @Override
             public void onLoginFailure() {
-                Log.d("DEBUG","onLoginFailure");
+                Log.d("DEBUG", "onLoginFailure");
                 //manageTextViewError(getString(R.string.login_failure));
+                hideProgressDialog();
             }
 
             @Override
             protected void onPostExecute(Object o) {
                 super.onPostExecute(o);
 
+                hideProgressDialog();
+
                 if(o == null){
-                   getErrorTextView().manageTextViewError(getString(R.string.login_error));
+                    getErrorTextView().manageTextViewError(getString(R.string.login_error));
                 } else {
-                   setUserAsLogged((JSONObject) o);
-                   finish();
+                    setUserAsLogged((JSONObject) o);
+                    finish();
                 }
             }
         }.execute();

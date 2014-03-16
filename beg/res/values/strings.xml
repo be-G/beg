@@ -30,4 +30,5 @@
     <string name="createaccount_textfield_errortext">CreateAccountError</string>
     <string name="chat_send_button">Send</string>
     <string name="progress_dialog_text">Loading...</string>
+    <string name="progressbar_text">Loading ...</string>
 </resources>

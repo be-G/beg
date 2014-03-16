@@ -29,17 +29,22 @@ public class CreateAccountActivity extends BegActivity {
 
                     //TODO check connection before, passare hashmap al costruttore CreateAccountTask
 
+                    showProgressDialog();
+
                     new CreateAccountTask(getName(), getMail(), getPassword()) {
 
                         @Override
                         public void onLoginFailure() {
-                            Log.d("Debug","onLoginFailure");
+                            Log.d("Debug", "onLoginFailure");
                             //manageTextViewError(getString(R.string.createaccount_failure));
+                            hideProgressDialog();
                         }
 
                         @Override
                         protected void onPostExecute(Object o) {
                             super.onPostExecute(o);
+
+                            hideProgressDialog();
 
                             if(o == null){
                                 getErrorTextView().manageTextViewError(getString(R.string.createaccount_error));

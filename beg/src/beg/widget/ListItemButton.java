@@ -27,7 +27,7 @@ public class ListItemButton extends Button {
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (false) {
+                if (!isLogged()) {
                     goToLogin();
                 } else {
                     goToUserDetail();
