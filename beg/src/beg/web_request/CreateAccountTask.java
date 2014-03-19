@@ -28,7 +28,7 @@ public abstract class CreateAccountTask extends AsyncBegTask{
             }
 
         } catch (Exception e) {
-            onLoginFailure();
+            onFailure();
         }
 
         return resp;

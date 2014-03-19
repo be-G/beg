@@ -8,6 +8,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.json.JSONTokener;
 
 import java.io.BufferedReader;
@@ -17,13 +18,14 @@ import java.io.InputStreamReader;
 public abstract class AsyncBegTask extends AsyncTask {
 
     protected JSONObject resp = null;
+
     protected final String baseUrl;
 
     protected AsyncBegTask() {
-        baseUrl = "http://10.0.0.3:9292/";
+        baseUrl = "http://10.0.0.2:9292/";
     }
 
-    public abstract void onLoginFailure();
+    public abstract void onFailure();
 
     protected static HttpClient getHttpClient(){
         return new DefaultHttpClient();
@@ -48,4 +50,9 @@ public abstract class AsyncBegTask extends AsyncTask {
     protected static JSONObject getJsonObjectFromString(String stringResponse) throws JSONException {
         return new JSONObject(new JSONTokener(stringResponse));
     }
+
+    protected static JSONArray getJsonArrayFromString(String stringResponse) throws JSONException {
+        return new JSONArray(stringResponse);
+    }
+
 }

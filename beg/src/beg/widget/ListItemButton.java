@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import beg.activity.LoginActivity;
 import beg.activity.UserDetailActivity;
+import beg.model.Color;
 import beg.model.User;
 
 import java.util.ArrayList;
@@ -63,6 +64,6 @@ public class ListItemButton extends Button {
     public void configureButton(ArrayList<User> users, int pos) {
         this.userData = users;
         this.position = pos;
-        this.setBackgroundResource(users.get(pos).getState());
+        this.setBackgroundResource(Color.getMarbleResource(users.get(pos).getState()));
     }
 }

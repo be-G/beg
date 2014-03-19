@@ -1,7 +1,5 @@
 package beg.web_request;
 
-import org.apache.http.HttpResponse;
-
 public abstract class LoginTask extends AsyncBegTask{
 
     private String name;
@@ -18,16 +16,14 @@ public abstract class LoginTask extends AsyncBegTask{
 
         try {
 
-            HttpResponse response = executeHttpGet(baseUrl + "/login" + "?name=" + name + "&password=" + pass);
-
-            String stringResponse = parseResponseToString(response);
+            String stringResponse = parseResponseToString(executeHttpGet(baseUrl + "/login" + "?name=" + name + "&password=" + pass));
 
             if(isLoginSuccessfull(stringResponse)){
                 resp = getJsonObjectFromString(stringResponse);
             }
 
         } catch (Exception e) {
-            onLoginFailure();
+            onFailure();
         }
 
         return resp;

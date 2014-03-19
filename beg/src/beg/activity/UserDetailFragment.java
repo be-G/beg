@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import beg.model.Color;
 import beg.model.User;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class UserDetailFragment extends Fragment {
 
         ((TextView) rootView.findViewById(R.id.user_name_text)).setText(user.getName());
         ((TextView) rootView.findViewById(R.id.user_description_text)).setText(user.getDescription());
-        rootView.findViewById(R.id.user_marble_imageView).setBackgroundResource(user.getState());
+        rootView.findViewById(R.id.user_marble_imageView).setBackgroundResource(Color.getMarbleResource(user.getState()));
         ((TextView) rootView.findViewById(R.id.user_distance_text)).setText(user.getDistance() + " m");
 
         return rootView;

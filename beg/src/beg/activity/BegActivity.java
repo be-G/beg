@@ -29,8 +29,9 @@ public class BegActivity extends Activity {
     }
 
     protected void showProgressDialog() {
-
-        progressDialog = ProgressDialog.show(this,"",getString(R.string.progress_dialog_text));
-
+        runOnUiThread(new Runnable() {
+            public void run() {
+                progressDialog = ProgressDialog.show(BegActivity.this,"",getString(R.string.progress_dialog_text));
+            }});
     }
 }

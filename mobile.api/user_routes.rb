@@ -35,12 +35,11 @@ class UserRoutes < Sinatra::Base
 
   end
 
-  get '/neighbors' do
+  get '/users' do
 
-    params["longitude"]
-    params["latitude"]
+    res = User.find(:all)
 
-    'Lista di utenti'
+    res.to_json
 
   end
 

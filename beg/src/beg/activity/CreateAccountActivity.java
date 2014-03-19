@@ -34,8 +34,8 @@ public class CreateAccountActivity extends BegActivity {
                     new CreateAccountTask(getName(), getMail(), getPassword()) {
 
                         @Override
-                        public void onLoginFailure() {
-                            Log.d("Debug", "onLoginFailure");
+                        public void onFailure() {
+                            Log.d("Debug", "onFailure");
                             //manageTextViewError(getString(R.string.createaccount_failure));
                             hideProgressDialog();
                         }

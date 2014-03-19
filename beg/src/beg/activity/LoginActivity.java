@@ -50,8 +50,8 @@ public class LoginActivity extends BegActivity {
         new LoginTask(getNameEditText().getText() + "", getPasswordEditText().getText() + "") {
 
             @Override
-            public void onLoginFailure() {
-                Log.d("DEBUG", "onLoginFailure");
+            public void onFailure() {
+                Log.d("DEBUG", "onFailure");
                 //manageTextViewError(getString(R.string.login_failure));
                 hideProgressDialog();
             }
