@@ -1,0 +1,11 @@
+I, [2014-03-26T23:28:11.547198 #30559]  INFO -- : listening on addr=/Users/nicoloereni/Project/mobile.api/tmp/sockets/unicorn.sock fd=10
+I, [2014-03-26T23:28:11.548270 #30559]  INFO -- : worker=0 spawning...
+I, [2014-03-26T23:28:11.549526 #30559]  INFO -- : worker=1 spawning...
+I, [2014-03-26T23:28:11.550672 #30559]  INFO -- : master process ready
+I, [2014-03-26T23:28:11.556324 #30561]  INFO -- : worker=1 spawned pid=30561
+I, [2014-03-26T23:28:11.556185 #30560]  INFO -- : worker=0 spawned pid=30560
+I, [2014-03-26T23:28:11.559214 #30560]  INFO -- : Refreshing Gem list
+I, [2014-03-26T23:28:11.558692 #30561]  INFO -- : Refreshing Gem list
+I, [2014-03-26T23:28:13.078486 #30561]  INFO -- : worker=1 ready
+I, [2014-03-26T23:28:13.078486 #30560]  INFO -- : worker=0 ready
+127.0.0.1 - - [26/Mar/2014 23:29:18] "GET /updateposition HTTP/1.0" 200 2 0.1043
